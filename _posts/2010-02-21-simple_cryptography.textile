@@ -1,0 +1,28 @@
+---
+layout: post
+title: Simple Cryptography using UDP and Python!
+---
+
+h1. {{ page.title }}
+
+p(meta). 21 February 2010
+
+This week I was working on a simple cryptography program in python. It basically has an encoder and a decoder and I integrated it with my previous UDP performance measuring application. Obviously, I had to remove the code that dealt with measuring the performance of UDP and instead added my encryption code in the client side and decryption code in the server side.You run the client by providing the host name as the first argument and the port the server is running on as the second argument. It then asks you for a key which has to be an alphanumeric key and also it should not contain two or more than two instances of the same letter or number. If the key is not alphanumeric or has multiple instances of a number of a letter, the program safely exits. After the user enters the key, it gives the user the option to enter the message in the command line or read a file. After the appropriate option has been chosen, the message is encrypted.
+It uses a very simple algorithm. First, I created a variable named "alphabets" that stores all alphabets both capital and small using "string.ascii_letters". Since, I also need to encrypt numbers i added "0123456789" to alphabets. I used a hash table for encrypting.I made each letter in the message a key. Every key's correspoding value's ascii was set so that it was greater than the original key's ascii value by 3.
+ <script src="http://gist.github.com/310816.js"></script> 
+The ord() is used to convert the letter to its corresponding ascii_value.It is incremented by 3. The chr() is used to convert it back to its corresponding character.
+
+<script src="http://gist.github.com/310826.js"></script>
+
+If the option to encrypt a file is selected the above code is used. It opens the file in the path provided by the user. A temporary string is declared where every line of the file is added. Later another string named encrypted_string is declared and for every letter in the temporary string its key is looked up in the encrypt table and stored in the encrypted_string.
+
+<script src="http://gist.github.com/310830.js"></script>
+
+The key is encrypted in a similar way. It is then prefixed to the encrypted message but a "#" seperates the encrypted_key and encrypted_message.
+In this way decryption can first decrypt the encrypted_key and if it matches the key provided upon decryption, it can successfully decrypt the encrypted file, else it can output an error stating that the keys do not match.
+
+<script src="http://gist.github.com/310834.js"></script>
+
+The ciphertext is then send via UDP to the appropriate Host in the appropriate port.
+
+
