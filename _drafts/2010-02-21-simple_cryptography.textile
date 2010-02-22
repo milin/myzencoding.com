@@ -1,0 +1,16 @@
+---
+layout: post
+title: Hello world!
+---
+
+h1. {{ page.title }}
+
+p(meta). 21 February 2010
+
+This week I was working on a simple cryptography program in python. It basically has an encoder and decoder and I integrated it with my previous UDP performance measuring application. Obviously, I had to remove the code that dealt with measuring the performance of UDP and instead added my encryption code in the client side and decryption code in the server side.
+You run the client by providing the host name and the port the server is running on. It then asks you for a key which has to be an alphanumeric key and also it should not contain two or more than two instances of the same letter or number. If the key is not alphanumeric or has multiple instances of a number of a letter, the program safely exits. After the user enters the key, it gives the user the option to enter the message in the command line or read a file. After the appropriate option has been chosen, the message is encrypted.
+It uses a very simple algorithm. First, I created a variable named "alphabets" that stores all alphabets both capital and small using "string.ascii_letters". Since, I also need to encrypt numbers i added "0123456789" toalphabets. I used a hash table for encrypting. For every letter in the message , I made each letter in the message a key. Every key's correspoding value's ascii was set so that it was greater than the original key's ascii value by 3.
+ <script src="http://gist.github.com/310816.js"></script> 
+
+
+
