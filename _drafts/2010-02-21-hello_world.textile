@@ -1,0 +1,12 @@
+---
+layout: post
+title: Hello world!
+---
+
+h1. {{ page.title }}
+
+p(meta). 12 February 2010
+
+Finally, I have set up a new blogging website :MyZenCoding. As the name suggests this blog is targeted to be a window through which one can witness the progress I make as I learn new programming languages and paradigms. Coding with a sense of Zen, a meditation practice which encourages mindfullness and awareness, is what I am aiming for.
+
+

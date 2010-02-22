@@ -1,0 +1,2 @@
+jekyll
+rsync -auz -e ssh _site/* milin@sunspot.dreamhost.com:myzencoding.com/

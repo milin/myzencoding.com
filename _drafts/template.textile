@@ -1,0 +1,10 @@
+---
+layout: post
+title: Hello world!
+---
+
+h1. {{ page.title }}
+
+p(meta). XX Month 2009
+
+

@@ -1,0 +1,12 @@
+#!/bin/bash
+# Script to create new textile template for blog post using Jekyll
+# Usage:   ./new blog_identifier
+# Example: ./new about_squirrels
+
+if [ $# = 0 ]
+then
+  echo "Usage: new topic_key"
+  exit 2
+fi
+
+cp template.textile `date +'%Y-%m-%d-'$1`.textile
