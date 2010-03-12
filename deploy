@@ -1,2 +1,2 @@
 jekyll
-rsync -auz -e ssh _site/* milin@sunspot.dreamhost.com:myzencoding.com/
+rsync -auz -e ssh _site/* milind@li109-137.members.linode.com:myzencoding.com/
